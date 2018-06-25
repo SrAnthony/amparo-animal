@@ -3,10 +3,52 @@ main {
 }
 #computer-menu .menu, #mobile-menu .menu {
   background: url(/images/header-bg.png);
+  box-shadow: 0px 5px 8px -1px rgba(0,0,0,0.20);
 }
 .hide {
   display: none !important;
 }
 .my-content {
-  padding-top: 1.5rem !important;
+  padding-top: 3.5rem !important;
+}
+.sidebar {
+  padding-top: 2.9rem !important;
+  background-color: rgba(0,0,0,0.02);
+  box-shadow: 7px 0px 25px 0px rgba(0,0,0,0.05);
+  /* text-align: center; */
+}
+.ui.animal.cards .card {
+  width: 170px !important;
+  margin-bottom: 10px !important;
+}
+.gallery-grid li {
+  /*position: absolute;*/
+  list-style-type: none;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.gallery-grid li.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s, top 1s;
+}
+
+.gallery-grid li > div {
+  margin: 10px;
+  padding: 15px;
+  transition: all 0.5s;
+}
+
+.gallery-grid li > div:hover {
+  transform: translateY(-10px);
+  /* border: 1px solid #ccc; */
+  box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+  transition: all 0.2s;
+}
+
+.text-center {
+  text-align: center !important;
 }

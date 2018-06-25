@@ -5,3 +5,7 @@ menuToggle = ->
 
 $('#mobile-menu a').on 'click', menuToggle
 $('#menu-toggler').on 'click', menuToggle
+
+$('.gallery-grid').NewWaterfall({width:190})
+
+$('.ui.dropdown').dropdown()
