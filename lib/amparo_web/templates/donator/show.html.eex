@@ -1,0 +1,43 @@
+<h2>Show Donator</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @donator.name %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @donator.address %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @donator.city %>
+  </li>
+
+  <li>
+    <strong>State:</strong>
+    <%= @donator.state %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @donator.phone %>
+  </li>
+
+  <li>
+    <strong>Obs:</strong>
+    <%= @donator.obs %>
+  </li>
+
+  <li>
+    <strong>Birthday:</strong>
+    <%= @donator.birthday %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: donator_path(@conn, :edit, @donator) %></span>
+<span><%= link "Back", to: donator_path(@conn, :index) %></span>

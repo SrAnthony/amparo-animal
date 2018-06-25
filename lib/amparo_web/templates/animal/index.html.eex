@@ -1,0 +1,8 @@
+<div class="ui padded grid my-content">
+  <div class="three wide column" style="background-color: #eee;">
+    conteudo 1
+  </div>
+  <div class="thirteen wide column">
+    conteudo 2
+  </div>
+</div>

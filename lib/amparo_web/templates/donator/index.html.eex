@@ -1,0 +1,38 @@
+<h2>Listing Donators</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Phone</th>
+      <th>Obs</th>
+      <th>Birthday</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for donator <- @donators do %>
+    <tr>
+      <td><%= donator.name %></td>
+      <td><%= donator.address %></td>
+      <td><%= donator.city %></td>
+      <td><%= donator.state %></td>
+      <td><%= donator.phone %></td>
+      <td><%= donator.obs %></td>
+      <td><%= donator.birthday %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: donator_path(@conn, :show, donator), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: donator_path(@conn, :edit, donator), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: donator_path(@conn, :delete, donator), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Donator", to: donator_path(@conn, :new) %></span>

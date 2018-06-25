@@ -1,0 +1,12 @@
+main {
+  padding-top: 1.7rem;
+}
+#computer-menu .menu, #mobile-menu .menu {
+  background: url(/images/header-bg.png);
+}
+.hide {
+  display: none !important;
+}
+.my-content {
+  padding-top: 1.5rem !important;
+}

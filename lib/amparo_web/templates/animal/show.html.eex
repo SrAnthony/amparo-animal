@@ -1,0 +1,38 @@
+<h2>Show Animal</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @animal.name %>
+  </li>
+
+  <li>
+    <strong>Breed:</strong>
+    <%= @animal.breed %>
+  </li>
+
+  <li>
+    <strong>Age:</strong>
+    <%= @animal.age %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @animal.city %>
+  </li>
+
+  <li>
+    <strong>Adoption date:</strong>
+    <%= @animal.adoption_date %>
+  </li>
+
+  <li>
+    <strong>Obs:</strong>
+    <%= @animal.obs %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: animal_path(@conn, :edit, @animal) %></span>
+<span><%= link "Back", to: animal_path(@conn, :index) %></span>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hello Amparo!</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+    <!-- Começo navbar -->
+    <div class="ui grid">
+
+    	<div id="computer-menu" class="mobile hidden row">
+    		<div class="column">
+
+          <div class="ui fixed stackable borderless inverted menu">
+            <div class="ui container">
+              <a href="#" class="header item">
+                <img class="logo" style="margin-right:10px;" src="<%= static_path(@conn, "/images/logo-w.png") %>">
+                Amparo Animal
+              </a>
+              <a id="menu-toggler" class="header item mobile only"><i class="bars icon"></i></a>
+              <a href="<%= animal_path(@conn, :index) %>" class="item">
+                <i class="paw icon"></i>
+                Animais
+              </a>
+              <a href="<%= donator_path(@conn, :index) %>" class="item">
+                <i class="child icon"></i>
+                Doadores
+              </a>
+              <div class="ui simple dropdown item hide">
+                <i class="plus icon"></i>
+                Cadastros
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                  <a class="item" href="<%= animal_path(@conn, :index) %>">Animais</a>
+                  <a class="item" href="<%= donator_path(@conn, :index) %>">Doadores</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    		</div>
+    	</div>
+
+    	<div id="mobile-menu" class="mobile only row">
+    		<div class="column">
+    			<div class="ui fixed inverted menu">
+    				<a class="item"><i class="bars icon"></i></a>
+    			</div>
+    		</div>
+    	</div>
+
+    </div>
+
+
+    <main>
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+      <%= render @view_module, @view_template, assigns %>
+    </main>
+
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script>require('js/menu.coffee')</script>
+  </body>
+</html>
