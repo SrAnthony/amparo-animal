@@ -1,0 +1,53 @@
+<div class="ui icon  fluid input">
+  <input type="text" placeholder="Procurar...">
+  <i class="search icon"></i>
+</div>
+<br>
+<a href="<%= animal_path(@conn, :new) %>" class="ui fluid button">
+  <i class="paw icon"></i>
+  Cadastrar animal
+</a>
+<br>
+<div class="ui floating dropdown icon fluid button text-center">
+  <i class="filter icon"></i>
+  <span class="text">Filtrar por tipo</span>
+  <div class="menu">
+    <div class="ui icon search input">
+      <i class="search icon"></i>
+      <input type="text" placeholder="Procurar por tipo...">
+    </div>
+    <div class="scrolling menu">
+      <div class="item">
+        Gato
+      </div>
+      <div class="item">
+        Cachorro
+      </div>
+      <div class="item">
+        Papagaio
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="ui floating dropdown icon fluid button text-center">
+  <i class="filter icon"></i>
+  <span class="text">Filtrar por raça</span>
+  <div class="menu">
+    <div class="ui icon search input">
+      <i class="search icon"></i>
+      <input type="text" placeholder="Procurar por tipo...">
+    </div>
+    <div class="scrolling menu">
+      <div class="item">
+        Pincher
+      </div>
+      <div class="item">
+        Puddle
+      </div>
+      <div class="item">
+        Labrador
+      </div>
+    </div>
+  </div>
+</div>

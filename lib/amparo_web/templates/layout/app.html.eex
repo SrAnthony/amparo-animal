@@ -68,5 +68,6 @@
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script>require('js/menu.coffee')</script>
+    <%= Drab.Client.run(@conn) %>
   </body>
 </html>

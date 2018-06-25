@@ -25,3 +25,11 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
+
+config :phoenix, :template_engines,
+  drab: Drab.Live.Engine
+
+config :drab,
+  main_phoenix_app: :amparo,
+  endpoint: Elixir.AmparoWeb.Endpoint,
+  pubsub: Elixir.Amparo.PubSub

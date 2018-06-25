@@ -37,7 +37,7 @@ config :amparo, AmparoWeb.Endpoint,
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
       ~r{lib/amparo_web/views/.*(ex)$},
-      ~r{lib/amparo_web/templates/.*(eex)$}
+      ~r{lib/amparo_web/templates/.*(eex|drab)$}
     ]
   ]
 
