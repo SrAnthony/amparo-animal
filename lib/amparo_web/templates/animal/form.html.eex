@@ -1,47 +1,50 @@
-<%= form_for @changeset, @action, fn f -> %>
+<%= form_for @changeset, @action, [id: "form-animal", class: "ui form", remote: "true"], fn f -> %>
   <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+    <div class="ui yellow message">
+      Oops, por favor cheque os campos abaixo
+      <div class="header">
+      </div>
+        <!-- Visit our registration page, then try again -->
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= label f, :name, class: "control-label" %>
-    <%= text_input f, :name, class: "form-control" %>
-    <%= error_tag f, :name %>
+  <h4 class="ui dividing header">Informações do animal</h4>
+  <div class="fields">
+    <div class="four wide field">
+      <%= text_input f, :name, placeholder: "Nome" %>
+      <%= error_tag f, :name %>
+    </div>
+
+    <div class="four wide field">
+      <%= text_input f, :breed, placeholder: "Raça" %>
+      <%= error_tag f, :breed %>
+    </div>
+
+    <div class="four wide field">
+      <%= number_input f, :age, placeholder: "Idade" %>
+      <%= error_tag f, :age %>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= label f, :breed, class: "control-label" %>
-    <%= text_input f, :breed, class: "form-control" %>
-    <%= error_tag f, :breed %>
+  <h4 class="ui dividing header">Informações de contato</h4>
+  <div class="fields">
+    <div class="four wide field">
+      <%= text_input f, :city, placeholder: "Cidade" %>
+      <%= error_tag f, :city %>
+    </div>
+    <div class="four wide field">
+      <%= text_input f, :adoption_date, placeholder: "Data de adoção" %>
+      <%= error_tag f, :adoption_date %>
+    </div>
+
   </div>
 
-  <div class="form-group">
-    <%= label f, :age, class: "control-label" %>
-    <%= number_input f, :age, class: "form-control" %>
-    <%= error_tag f, :age %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :city, class: "control-label" %>
-    <%= text_input f, :city, class: "form-control" %>
-    <%= error_tag f, :city %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :adoption_date, class: "control-label" %>
-    <%= date_select f, :adoption_date, class: "form-control" %>
-    <%= error_tag f, :adoption_date %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :obs, class: "control-label" %>
-    <%= textarea f, :obs, class: "form-control" %>
+  <div class="twelve wide field">
+    <%= textarea f, :obs, placeholder: "Observações" %>
     <%= error_tag f, :obs %>
   </div>
 
   <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+    <%= submit "Cadastrar", class: "ui primary button" %>
   </div>
 <% end %>

@@ -1,31 +1,17 @@
 <div class="ui padded grid">
   <div class="three wide column mobile hidden sidebar">
 
-    <%= render "_sidebar.html", conn: @conn %>
+    <%= render "_sidebar_index.html", conn: @conn %>
 
   </div>
   <div class="thirteen wide column my-content">
     <ul class="gallery-grid ui animal cards">
 
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
-      <%= render "_card.html", name: "Fred", conn: @conn %>
+      <%= for animal <- @animals do %>
 
+        <%= render "_card.html", animal: animal, conn: @conn %>
+
+      <% end %>
     </ul>
 
   </div> <!-- column -->

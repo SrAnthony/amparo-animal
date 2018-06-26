@@ -17,6 +17,7 @@ defmodule AmparoWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", AnimalController, :index
+    get "/animals/auto_create", AnimalController, :auto_create
     resources "/animals", AnimalController
     resources "/donators", DonatorController
   end

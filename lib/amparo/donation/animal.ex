@@ -10,6 +10,10 @@ defmodule Amparo.Donation.Animal do
     field :city, :string
     field :name, :string
     field :obs, :string
+    field :image, :string
+    field :temperament, :string
+    field :weight, :string
+    field :height, :string
 
     timestamps()
   end
@@ -17,7 +21,7 @@ defmodule Amparo.Donation.Animal do
   @doc false
   def changeset(animal, attrs) do
     animal
-    |> cast(attrs, [:name, :breed, :age, :city, :adoption_date, :obs])
-    |> validate_required([:name, :breed, :age, :city, :adoption_date, :obs])
+    |> cast(attrs, [:name, :breed, :age, :city, :adoption_date, :obs, :image, :temperament, :weight, :height])
+    |> validate_required([:name])
   end
 end

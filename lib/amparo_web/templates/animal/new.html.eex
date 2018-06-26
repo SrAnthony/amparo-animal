@@ -1,5 +1,15 @@
-<h2>New Animal</h2>
+<div class="ui padded grid">
+  <div class="three wide column mobile hidden sidebar">
 
-<%= render "form.html", Map.put(assigns, :action, animal_path(@conn, :create)) %>
+    <%= render "_sidebar_new.html", conn: @conn, animals: @animals %>
 
-<span><%= link "Back", to: animal_path(@conn, :index) %></span>
+  </div>
+  <div class="thirteen wide column my-content form-content">
+
+    <h2>Cadastrando animal</h2>
+    <%= render "form.html", Map.put(assigns, :action, animal_path(@conn, :create)) %>
+    <br>
+    <span><%= link "Voltar", to: animal_path(@conn, :index) %></span>
+
+  </div> <!-- column -->
+</div>

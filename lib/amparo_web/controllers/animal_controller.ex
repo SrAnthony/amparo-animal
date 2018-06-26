@@ -1,17 +1,41 @@
 defmodule AmparoWeb.AnimalController do
   use AmparoWeb, :controller
+  use HTTPoison.Base
 
   alias Amparo.Donation
   alias Amparo.Donation.Animal
 
   def index(conn, _params) do
     animals = Donation.list_animals()
-    render(conn, "index.html", animals: animals)
+    changeset = Donation.change_animal(%Animal{})
+    render(conn, "index.html", animals: animals, changeset: changeset)
   end
 
   def new(conn, _params) do
+    animals = Donation.list_animals()
     changeset = Donation.change_animal(%Animal{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, animals: animals)
+  end
+
+  def get_dog_body do
+    %HTTPoison.Response{ body: body } = HTTPoison.get! "https://api.thedogapi.com/v1/images/search?"
+    body |> Poison.decode!
+  end
+
+  def get_dog_url(body) do
+    %{"url" => url} = body
+    url
+  end
+
+  def auto_create(conn, _params) do
+    [ %{"breeds" => breeds, "url" => url} ] = get_dog_body()
+    if(List.first(breeds) == nil) do
+      auto_create(conn, {})
+    else
+      %{"name" => name, "bred_for" => bred_for} = List.first(breeds)
+      animal = %{"name" => name, "image" => url, "breed" => bred_for}
+      create(conn, %{"animal" => animal})
+    end
   end
 
   def create(conn, %{"animal" => animal_params}) do

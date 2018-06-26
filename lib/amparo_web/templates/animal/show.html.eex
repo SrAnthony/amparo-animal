@@ -36,3 +36,4 @@
 
 <span><%= link "Edit", to: animal_path(@conn, :edit, @animal) %></span>
 <span><%= link "Back", to: animal_path(@conn, :index) %></span>
+<span><%= link "Delete", to: animal_path(@conn, :delete, @animal), method: :delete %></span>

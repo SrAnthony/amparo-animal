@@ -52,3 +52,12 @@ main {
 .text-center {
   text-align: center !important;
 }
+
+.form-content {
+  padding-left: 3rem !important;
+}
+
+.selection.list.dog-new {
+  height: 70vh;
+  overflow-y: auto;
+}

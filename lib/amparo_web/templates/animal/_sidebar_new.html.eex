@@ -1,0 +1,19 @@
+<div class="ui icon  fluid input">
+  <input type="text" placeholder="Procurar...">
+  <i class="search icon"></i>
+</div>
+<br>
+<div class="ui selection list dog-new">
+
+  <%= for animal <- @animals do %>
+
+    <div class="item">
+      <img class="ui avatar image" src="<%= animal.image %>">
+      <div class="content">
+        <a href="<%= animal_path(@conn, :show, animal) %>" class="header"><%= animal.name %></a>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>

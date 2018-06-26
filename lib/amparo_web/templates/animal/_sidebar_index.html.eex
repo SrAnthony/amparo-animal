@@ -3,9 +3,14 @@
   <i class="search icon"></i>
 </div>
 <br>
-<a href="<%= animal_path(@conn, :new) %>" class="ui fluid button">
+<a href="<%= animal_path(@conn, :new) %>" class="ui fluid positive button">
   <i class="paw icon"></i>
   Cadastrar animal
+</a>
+<br>
+<a href="<%= animal_path(@conn, :auto_create) %>" class="ui fluid primary button">
+  <i class="paper plane icon"></i>
+  Auto cadastrar animal
 </a>
 <br>
 <div class="ui floating dropdown icon fluid button text-center">

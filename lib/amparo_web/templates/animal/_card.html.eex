@@ -8,10 +8,10 @@
           </div>
         </div>
       </div>
-      <img src="<%= static_path(@conn, "/images/elyse.png") %>">
+      <img src="<%= @animal.image %>">
     </div>
     <div class="content">
-      <a class="header"><%= @name %></a>
+      <a href="<%= animal_path(@conn, :show, @animal) %>" class="header"><%= @animal.name %></a>
       <div class="meta">
         <span class="date">Created in Sep 2014</span>
       </div>
