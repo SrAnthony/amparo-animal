@@ -13,14 +13,14 @@
     <div class="content">
       <a href="<%= animal_path(@conn, :show, @animal) %>" class="header"><%= @animal.name %></a>
       <div class="meta">
-        <span class="date">Created in Sep 2014</span>
+        <span class="date">Postado em <%= @animal.inserted_at.day %>/<%= @animal.inserted_at.month %></span>
       </div>
     </div>
-    <div class="extra content">
+    <!-- <div class="extra content">
       <a>
         <i class="users icon"></i>
         2 Members
       </a>
-    </div>
+    </div> -->
   </div>
 </li>

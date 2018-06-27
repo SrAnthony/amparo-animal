@@ -1,39 +1,62 @@
-<h2>Show Animal</h2>
+<div class="ui padded grid">
+  <div class="three wide column mobile hidden sidebar">
 
-<ul>
+    <%= render "_sidebar_show.html", conn: @conn, animals: @animals %>
 
-  <li>
-    <strong>Name:</strong>
-    <%= @animal.name %>
-  </li>
+  </div>
+  <div class="thirteen wide column my-content form-content show-animal">
 
-  <li>
-    <strong>Breed:</strong>
-    <%= @animal.breed %>
-  </li>
+    <div class="animal-show-header">
+      <div class="ui rounded centered medium image">
+        <img src="<%= @animal.image %>" alt="<%= @animal.name %>">
+      </div>
+      <h2><%= @animal.name %></h2>
+      <h4><%= @animal.breed %></h4>
+    </div>
 
-  <li>
-    <strong>Age:</strong>
-    <%= @animal.age %>
-  </li>
+    <!-- field :adoption_date, :date
+    field :age, :integer
+    field :breed, :string
+    field :city, :string
+    field :name, :string
+    field :obs, :string
+    field :image, :string
+    field :temperament, :string
+    field :weight, :string
+    field :height, :string -->
 
-  <li>
-    <strong>City:</strong>
-    <%= @animal.city %>
-  </li>
+    <div class="ui piled segment animal-new-segment">
+      <div class="ui grid">
+        <div class="four wide column">
+          <h3 class="ui header">Cidade</h3>
+          <p><%= @animal.city %></p>
+        </div>
+        <div class="four wide column">
+          <h3 class="ui header">Características</h3>
+          <p><%= @animal.age %> anos</p>
+          <p><%= @animal.weight %> </p>
+          <p><%= @animal.height %> de altura</p>
+        </div>
+        <div class="four wide column">
+          <h3 class="ui header">Temperamento</h3>
+          <p><%= @animal.temperament %></p>
+        </div>
+        <div class="four wide column">
+          <h3 class="ui header">Observações</h3>
+          <p><%= @animal.obs %></p>
+        </div>
+      </div>
+    </div>
 
-  <li>
-    <strong>Adoption date:</strong>
-    <%= @animal.adoption_date %>
-  </li>
+    <%= link to: animal_path(@conn, :edit, @animal), class: "ui labeled icon button" do %>
+      <i class="edit icon"></i>
+      Editar
+    <% end %>
+    <%= link to: animal_path(@conn, :delete, @animal), method: :delete, class: "ui labeled icon button" do %>
+      <i class="trash icon"></i>
+      Deletar
+    <% end %>
 
-  <li>
-    <strong>Obs:</strong>
-    <%= @animal.obs %>
-  </li>
 
-</ul>
-
-<span><%= link "Edit", to: animal_path(@conn, :edit, @animal) %></span>
-<span><%= link "Back", to: animal_path(@conn, :index) %></span>
-<span><%= link "Delete", to: animal_path(@conn, :delete, @animal), method: :delete %></span>
+  </div> <!-- column -->
+</div>

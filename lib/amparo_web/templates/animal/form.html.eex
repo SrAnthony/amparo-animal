@@ -25,6 +25,20 @@
       <%= error_tag f, :age %>
     </div>
   </div>
+  <div class="fields">
+    <div class="four wide field">
+      <%= text_input f, :temperament, placeholder: "Temperamento" %>
+      <%= error_tag f, :temperament %>
+    </div>
+    <div class="four wide field">
+      <%= text_input f, :weight, placeholder: "Peso" %>
+      <%= error_tag f, :weight %>
+    </div>
+    <div class="four wide field">
+      <%= text_input f, :height, placeholder: "Altura" %>
+      <%= error_tag f, :height %>
+    </div>
+  </div>
 
   <h4 class="ui dividing header">Informações de contato</h4>
   <div class="fields">
@@ -45,6 +59,6 @@
   </div>
 
   <div class="form-group">
-    <%= submit "Cadastrar", class: "ui primary button" %>
+    <%= submit "Salvar", class: "ui primary button" %>
   </div>
 <% end %>

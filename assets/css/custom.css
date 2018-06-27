@@ -58,6 +58,24 @@ main {
 }
 
 .selection.list.dog-new {
-  height: 70vh;
+  height: 50vh;
   overflow-y: auto;
+}
+
+.show-animal {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.animal-show-header h2 {
+  margin-bottom: 0;
+}
+.animal-show-header h4 {
+  margin-top: 0;
+}
+.animal-new-segment h3 {
+  margin: 0 0 8px 0 !important;
+}
+.animal-new-segment p {
+  margin-bottom: 3px !important;
 }

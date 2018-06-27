@@ -20,7 +20,7 @@ defmodule Amparo.Mixfile do
   def application do
     [
       mod: {Amparo.Application, []},
-      extra_applications: [:logger, :runtime_tools, :httpoison]
+      extra_applications: [:logger, :runtime_tools, :httpoison, :timex]
     ]
   end
 
@@ -43,7 +43,8 @@ defmodule Amparo.Mixfile do
       {:cowboy, "~> 1.0"},
       {:drab, "~> 0.8.3"},
       {:httpoison, "~> 1.0"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
+      {:timex, "~> 3.1"}
     ]
   end
 

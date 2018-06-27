@@ -1,7 +1,12 @@
-<div class="ui icon  fluid input">
+<div class="ui icon fluid input">
   <input type="text" placeholder="Procurar...">
   <i class="search icon"></i>
 </div>
+<br>
+<a href="<%= animal_path(@conn, :new) %>" class="ui fluid positive button">
+  <i class="paw icon"></i>
+  Cadastrar animal
+</a>
 <br>
 <a href="<%= animal_path(@conn, :index) %>" class="ui fluid button">
   <i class="caret left icon"></i>

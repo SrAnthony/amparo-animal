@@ -50,8 +50,9 @@ defmodule AmparoWeb.AnimalController do
   end
 
   def show(conn, %{"id" => id}) do
+    animals = Donation.list_animals()
     animal = Donation.get_animal!(id)
-    render(conn, "show.html", animal: animal)
+    render(conn, "show.html", animal: animal, animals: animals)
   end
 
   def edit(conn, %{"id" => id}) do
