@@ -14,7 +14,8 @@ defmodule AmparoWeb.AnimalController do
   def new(conn, _params) do
     animals = Donation.list_animals()
     changeset = Donation.change_animal(%Animal{})
-    render(conn, "new.html", changeset: changeset, animals: animals)
+    image = get_dog_body() |> get_dog_image()
+    render(conn, "new.html", changeset: changeset, animals: animals, image: image)
   end
 
   def get_dog_body do
@@ -22,8 +23,7 @@ defmodule AmparoWeb.AnimalController do
     body |> Poison.decode!
   end
 
-  def get_dog_url(body) do
-    %{"url" => url} = body
+  def get_dog_image([%{"url" => url}]) do
     url
   end
 
@@ -56,9 +56,10 @@ defmodule AmparoWeb.AnimalController do
   end
 
   def edit(conn, %{"id" => id}) do
+    animals = Donation.list_animals()
     animal = Donation.get_animal!(id)
     changeset = Donation.change_animal(animal)
-    render(conn, "edit.html", animal: animal, changeset: changeset)
+    render(conn, "edit.html", animal: animal, animals: animals, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "animal" => animal_params}) do

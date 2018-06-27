@@ -58,7 +58,11 @@
     <%= error_tag f, :obs %>
   </div>
 
-  <div class="form-group">
-    <%= submit "Salvar", class: "ui primary button" %>
-  </div>
+  <%= submit "Salvar", class: "ui primary button" %>
+  <%= if assigns[:animal] do %>
+    <%= link "Voltar", to: animal_path(@conn, :show, @animal), class: "ui button" %>
+  <% else %>
+    <%= link "Voltar", to: animal_path(@conn, :index), class: "ui button" %>
+  <% end %>
+
 <% end %>

@@ -9,7 +9,6 @@
     <h2>Cadastrando animal</h2>
     <%= render "form.html", Map.put(assigns, :action, animal_path(@conn, :create)) %>
     <br>
-    <span><%= link "Voltar", to: animal_path(@conn, :index) %></span>
 
   </div> <!-- column -->
 </div>

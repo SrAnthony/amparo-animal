@@ -1,5 +1,14 @@
-<h2>Edit Animal</h2>
+<div class="ui padded grid">
+  <div class="three wide column mobile hidden sidebar">
 
-<%= render "form.html", Map.put(assigns, :action, animal_path(@conn, :update, @animal)) %>
+    <%= render "_sidebar_new.html", conn: @conn, animals: @animals %>
 
-<span><%= link "Back", to: animal_path(@conn, :index) %></span>
+  </div>
+  <div class="thirteen wide column my-content form-content">
+
+    <h2>Editando animal</h2>
+    <%= render "form.html", Map.put(assigns, :action, animal_path(@conn, :update, @animal)) %>
+    <br>
+
+  </div> <!-- column -->
+</div>
