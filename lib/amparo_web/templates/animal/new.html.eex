@@ -4,7 +4,7 @@
     <%= render "_sidebar_new.html", conn: @conn, animals: @animals %>
 
   </div>
-  <div class="thirteen wide column my-content form-content">
+  <div class="thirteen wide column my-content form-content show-animal">
 
     <h2>Cadastrando animal</h2>
     <%= render "form.html", Map.put(assigns, :action, animal_path(@conn, :create)) %>

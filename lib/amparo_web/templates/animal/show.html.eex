@@ -14,17 +14,6 @@
       <h4><%= @animal.breed %></h4>
     </div>
 
-    <!-- field :adoption_date, :date
-    field :age, :integer
-    field :breed, :string
-    field :city, :string
-    field :name, :string
-    field :obs, :string
-    field :image, :string
-    field :temperament, :string
-    field :weight, :string
-    field :height, :string -->
-
     <div class="ui piled segment animal-new-segment">
       <div class="ui grid">
         <div class="four wide column">

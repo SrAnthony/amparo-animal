@@ -56,10 +56,11 @@ defmodule AmparoWeb.AnimalController do
   end
 
   def edit(conn, %{"id" => id}) do
+    image = get_dog_body() |> get_dog_image()
     animals = Donation.list_animals()
     animal = Donation.get_animal!(id)
     changeset = Donation.change_animal(animal)
-    render(conn, "edit.html", animal: animal, animals: animals, changeset: changeset)
+    render(conn, "edit.html", animal: animal, animals: animals, changeset: changeset, image: image)
   end
 
   def update(conn, %{"id" => id, "animal" => animal_params}) do

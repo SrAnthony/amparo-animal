@@ -79,3 +79,8 @@ main {
 .animal-new-segment p {
   margin-bottom: 3px !important;
 }
+
+.fields.center {
+  justify-content: center;
+  margin-top: 5px;
+}
